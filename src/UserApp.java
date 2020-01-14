@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class UserApp {
   public static void main(String[] args) throws InterruptedException, IOException {
-    String MapperReducerIP = "172.28.0.3";
+    String MapperReducerIP = "172.31.0.3";
     //        /home/ahmad/Downloads/input.txt
 
     String IP = "";
