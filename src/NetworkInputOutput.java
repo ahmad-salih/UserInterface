@@ -3,6 +3,18 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+/*
+ * Copyright 2020, for Ahmad
+ *
+ * This software is released under the terms of the
+ * GNU GPL license. See https://www.gnu.org/licenses/gpl-3.0.html
+ * for more information.
+ *
+ * @author Ahmad
+ * @date 1/15/2020
+ * @package abstractSocket
+ */
+
 public class NetworkInputOutput {
     private Socket socket;
 

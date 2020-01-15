@@ -4,6 +4,18 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/*
+ * Copyright 2020, for Ahmad
+ *
+ * This software is released under the terms of the
+ * GNU GPL license. See https://www.gnu.org/licenses/gpl-3.0.html
+ * for more information.
+ *
+ * @author Ahmad
+ * @date 1/15/2020
+ * @package abstractSocket
+ */
+
 public class UserApp {
   public static void main(String[] args) throws InterruptedException, IOException {
     String MapperReducerIP = "172.31.0.3";
@@ -68,7 +80,11 @@ public class UserApp {
     if (file1.isFile()) {
       boolean del = file1.delete();
       if (del) {
-        file1.createNewFile();
+        boolean create = file1.createNewFile();
+        if (!create){
+          System.out.println("file creation problem");
+          System.exit(0);
+        }
       }
     }
 
@@ -138,7 +154,11 @@ public class UserApp {
     if (file.isFile()) {
       boolean del = file.delete();
       if (del) {
-        file.createNewFile();
+        boolean create = file.createNewFile();
+        if (!create){
+          System.out.println("file creation problem");
+          System.exit(0);
+        }
       }
     }
 
