@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 
 public class UserApp {
   public static void main(String[] args) throws InterruptedException, IOException {
-    String MapperReducerIP = "172.31.0.3";
+    String MapperReducerIP = "172.23.0.2";
     //        /home/ahmad/Downloads/input.txt
 
     String IP = "";
@@ -93,6 +93,12 @@ public class UserApp {
 
     writeToFile(writer, "version: '3'\n" + "\n" + "services:\n");
 
+
+    File all = new File("/home/ahmad/All/");
+    if (!all.isDirectory()){
+      all.mkdirs();
+    }
+
     for (int i = 1; i <= numberM; i++) {
       writeToFile(
           writer,
@@ -101,9 +107,8 @@ public class UserApp {
               + ":\n"
               + "    tty: true\n"
               + "    image: ahmadsalih/mymapper\n"
-              /*+ "    command: ./var/Mapper.sh\n"
               + "    volumes:\n"
-              + "      - /home/ahmad/IdeaProjects/Project/All/:/Project\n"*/
+              + "      - /home/ahmad/All/:/var\n"
               + "\n");
     }
 
@@ -115,9 +120,8 @@ public class UserApp {
               + ":\n"
               + "    tty: true\n"
               + "    image: ahmadsalih/myreducer\n"
-              /*+ "    command: ./var/Reducer.sh\n"
               + "    volumes:\n"
-              + "      - /home/ahmad/IdeaProjects/Project/All/:/Project\n"*/
+              + "      - /home/ahmad/All/:/var\n"
               + "\n");
     }
 
